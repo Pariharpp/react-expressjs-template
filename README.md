@@ -2,9 +2,12 @@
 
 
 ### Install
+```
 $ npm install
-
+```
 
 ### Run
+```
 $ npm start
 $ npm run webpack
+```
