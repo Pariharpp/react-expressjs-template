@@ -1,7 +1,7 @@
 {
-  "name": "react-expressjs-template",
+  "name": "online-compiler",
   "version": "1.0.0",
-  "description": "React - ExpressJS Starter Template",
+  "description": "React - ExpressJS Online Compiler",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -27,6 +27,6 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
-    "dotenv": "^4.0.0",
+    "dotenv": "^4.0.0"
   }
 }
