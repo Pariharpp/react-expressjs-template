@@ -11,12 +11,15 @@ class Editor extends Component {
     super(props);
     let mode = this.props.match.params.tag;
     let found = false;
+    let language = {};
     this.props.data.languages.forEach(el=>{
       if(el.mode == mode) {
+        language = el;
         found = true;
       }
     });
     this.state = {
+      language: language,
       mode: mode,
       theme: 'monokai',
       options: {
@@ -34,6 +37,12 @@ class Editor extends Component {
   render() {
     return(
       <section>
+        <div className="toolbar">
+          <ul>
+            <li><a>{this.state.language.name}</a></li>
+            <li><a className="btn btn-sm btn-success"><i className="fa fa-play" aria-hidden="true"></i>&nbsp;run</a></li>
+          </ul>
+        </div>
         <div className="row">
           <AceEditor
             name="editor"
@@ -41,6 +50,8 @@ class Editor extends Component {
             theme={this.state.theme}
             setOptions={this.state.options}
           />
+        </div>
+        <div className="statsbar">
         </div>
       </section>
     )
