@@ -5,13 +5,17 @@ import { Provider } from "react-redux"
 import store from './../store.js';
 
 import Home from './Home/Home.jsx';
+import Editor from './Editor/Editor.jsx';
 
 class App extends Component {
   render() {
     return(
       <Provider store={store}>
         <BrowserRouter>
-          <Route exact path='/' component={Home}/>
+          <div className="wrapper">
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/editor/:tag' component={Editor}/>
+          </div>
         </BrowserRouter>
       </Provider>
     )

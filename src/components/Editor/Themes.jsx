@@ -1,0 +1,16 @@
+// languages
+import 'brace/mode/javascript';
+import 'brace/mode/java';
+import 'brace/mode/python';
+import 'brace/mode/ruby';
+// Themes
+import 'brace/theme/monokai';
+import 'brace/theme/github';
+import 'brace/theme/tomorrow';
+import 'brace/theme/kuroir';
+import 'brace/theme/twilight';
+import 'brace/theme/xcode';
+import 'brace/theme/textmate';
+import 'brace/theme/solarized_dark';
+import 'brace/theme/solarized_light';
+import 'brace/theme/terminal';

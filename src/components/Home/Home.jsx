@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
+import { withRouter } from 'react-router-dom';
 
 class Home extends Component {
   render() {
@@ -35,12 +36,15 @@ class Home extends Component {
     return this.props.data.languages.map((lang) =>
     <div className="col-sm-3">
       <div className="icon">
-        <img src={this.getLangIcon(lang.icon)} />
+        <img src={this.getLangIcon(lang.tag)} onClick={()=>this.onClickIcon(lang)}/>
       </div>
     </div> );
   }
   getLangIcon(lang) {
     return "/img/icons/" + lang + ".svg";
+  }
+  onClickIcon(lang) {
+    this.props.history.push('/editor/'+lang.tag);
   }
 }
 function mapStateToProps(state) {
@@ -48,4 +52,4 @@ function mapStateToProps(state) {
     data: state.data,
   };
 }
-export default connect(mapStateToProps)(Home);
+export default withRouter(connect(mapStateToProps)(Home));
