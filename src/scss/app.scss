@@ -1,1 +1,45 @@
 @import '~bootstrap/scss/bootstrap';
+
+.main-header {
+  height: 50vh;
+  width: 100%;
+  background-image:
+  linear-gradient(to right bottom,
+  rgba(208, 64, 64, 0.8),
+  rgba(206, 27, 27, 0.8)),
+  url('/img/header.jpg');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 25vh, 0 100%);
+}
+.main-header {
+  .container {
+    padding-top: 100px;
+  }
+  h1 {
+    font-size: 3.5em;
+    color: #FFFFFF;
+  }
+  h4 {
+    font-size: 1.2em;
+    color: #FFFFFF;
+  }
+}
+
+.languages {
+  .icon {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .icon img {
+    width: 74px;
+  }
+  .icon:hover img {
+    transform: scale(1.1);
+  }
+}

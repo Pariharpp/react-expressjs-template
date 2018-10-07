@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Home from './Home/Home.jsx';
 
 class App extends Component {
   render() {
     return(
-      <h1>Hello World</h1>
+      <BrowserRouter>
+        <Route exact path='/' component={Home}/>
+      </BrowserRouter>
     )
   }
 }
