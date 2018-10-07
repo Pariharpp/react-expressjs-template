@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-
-let languages = [
-  {name: 'C', icon: 'c'},
-  {name: 'C++', icon: 'cpp'},
-  {name: 'Java', icon: 'java'},
-  {name: 'Python', icon: 'python'},
-  {name: 'PhP', icon: 'php'},
-  {name: 'Ruby', icon: 'ruby'},
-  {name: 'JavaScript', icon: 'javascript'},
-  {name: 'GO', icon: 'go'},
-]
+import { connect } from "react-redux"
 
 class Home extends Component {
   render() {
@@ -42,11 +32,10 @@ class Home extends Component {
     return "<Lets Code />";
   }
   getLanguagesIcon() {
-    return languages.map((lang) =>
+    return this.props.data.languages.map((lang) =>
     <div className="col-sm-3">
       <div className="icon">
         <img src={this.getLangIcon(lang.icon)} />
-        {/* <p>{lang.name}</p> */}
       </div>
     </div> );
   }
@@ -54,4 +43,9 @@ class Home extends Component {
     return "/img/icons/" + lang + ".svg";
   }
 }
-export default Home;
+function mapStateToProps(state) {
+  return {
+    data: state.data,
+  };
+}
+export default connect(mapStateToProps)(Home);
